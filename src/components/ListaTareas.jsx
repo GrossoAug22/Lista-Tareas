@@ -1,6 +1,13 @@
+import ListGroup from 'react-bootstrap/ListGroup';
+import ItemTarea from './ItemTarea';
+
 const ListaTareas = () => {
   return (
-    <div>ListaTareas</div>
+    <div>
+        <ListGroup>
+            <ItemTarea />
+    </ListGroup>
+    </div>
   )
 }
 
