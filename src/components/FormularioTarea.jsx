@@ -9,18 +9,18 @@ function FormularioTarea() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Aqui Deberia ir la tarea");
-        
+        setTareas([...tareas, tarea]);
+        setTarea(" ");
     }
   return (
     <section>
       <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3 d-flex" controlId="exampleForm.ControlInput1">
-        <Form.Control type="text" placeholder="Ingresa una tarea" onChange={(e)=>setTarea(e.target.value)}/>
-      <Button variant="info">Enviar</Button>
+        <Form.Control type="text" placeholder="Ingresa una tarea" onChange={(e)=>setTarea(e.target.value)} value={tarea}/>
+      <Button variant="info" type="submit">Enviar</Button>
       </Form.Group>
     </Form>
-    <ListaTareas />
+    <ListaTareas tareas={tareas} />
     </section>
   )
 }
